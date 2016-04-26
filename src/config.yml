@@ -1,0 +1,74 @@
+default:
+  overrideDefaultMountability: false
+  allowJump: false
+  allowSteer: false
+  climbVec: 0.1
+  airVecRatio: 0.1
+  groundVec: 0.3
+  jumpVec: 0.4
+  asscendVec: 0.5
+  decendVec: -0.5
+  hoverVec: 0.00
+  allowMount: false
+  allowFlight: false
+  ignoreFallDamage: 3.0
+  require:
+    cannot:
+      - LEASH
+MINECART:
+  groundPlace: true
+  allowJump: true
+  allowSteer: true
+  allowMount: true
+  groundVec: 1.0
+  jumpVec: 0.7
+  climbVec: 0.2
+  hoverVec: 0.05
+  climbMaterials:
+    - VINE
+    - LADDER
+HORSE:
+  allowMount: true
+  require:
+    cannot:
+      - GOLDEN_APPLE
+      - GOLDEN_CARROT
+COW:
+  require:
+    cannot:
+      - WHEAT
+SHEEP:
+  require:
+    cannot:
+      - WHEAT
+BOAT:
+  allowMount: true
+PIG:
+  allowMount: true
+  require:
+    saddle: true
+    cannot:
+      - CARROT_ITEM
+MINECART_COMMAND:
+  groundPlace: true
+MINECART_CHEST:
+  groundPlace: true
+MINECART_FURNACE:
+  groundPlace: true
+MINECART_TNT:
+  groundPlace: true
+MINECART_HOPPER:
+  groundPlace: true
+MINECART_MOB_SPAWNER:
+  groundPlace: true
+BAT:
+  allowFlight: true
+BLAZE:
+  allowFlight: true
+WITHER:
+  allowFlight: true
+ENDER_DRAGON:
+  allowFlight: true
+  hoverVec: 0.0
+GHAST:
+  allowFlight: true  

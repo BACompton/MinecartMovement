@@ -1,0 +1,1645 @@
+name: MinecartMovement
+version: 1.0
+main: d3ath5643.MinecartMovement.Main
+author: D3ath5643
+description: MinecraftMovement lets players steer, jump, and climb in different vechicles such as a minecraft.
+depend: [ProtocolLib]
+
+commands:
+  mmreload:
+    description: Command to reload the config file for MinecartMovement.
+    permission: MinecartMovement.command.reload
+    permission-message: "You do not have permission to reload the MinecartMovement's config!"
+    usage: Proper usage /<command> 
+
+permissions:
+  MinecartMovement.*:
+    description: Gives access to all MinecartMovement's commands and abilities
+    children:
+      MinecartMovement.command.*: true
+      MinecartMovement.dropped_item.*: true
+      MinecartMovement.experience_orb.*: true
+      MinecartMovement.leash_hitch.*: true
+      MinecartMovement.painting.*: true
+      MinecartMovement.arrow.*: true
+      MinecartMovement.snowball.*: true
+      MinecartMovement.fireball.*: true
+      MinecartMovement.small_fireball.*: true
+      MinecartMovement.ender_pearl.*: true
+      MinecartMovement.ender_signal.*: true
+      MinecartMovement.thrown_exp_bottle.*: true
+      MinecartMovement.item_frame.*: true
+      MinecartMovement.wither_skull.*: true
+      MinecartMovement.primed_tnt.*: true
+      MinecartMovement.falling_block.*: true
+      MinecartMovement.firework.*: true
+      MinecartMovement.armor_stand.*: true
+      MinecartMovement.minecart_command.*: true
+      MinecartMovement.minecart_command.groundPlace: true
+      MinecartMovement.boat.*: true
+      MinecartMovement.minecart.*: true
+      MinecartMovement.minecart.groundPlace: true
+      MinecartMovement.minecart_chest.*: true
+      MinecartMovement.minecart_chest.groundPlace: true
+      MinecartMovement.minecart_furnace.*: true
+      MinecartMovement.minecart_furnace.groundPlace: true
+      MinecartMovement.minecart_tnt.*: true
+      MinecartMovement.minecart_tnt.groundPlace: true
+      MinecartMovement.minecart_hopper.*: true
+      MinecartMovement.minecart_hopper.groundPlace: true
+      MinecartMovement.minecart_mob_spawner.*: true
+      MinecartMovement.minecart_mob_spawner.groundPlace: true
+      MinecartMovement.creeper.*: true
+      MinecartMovement.skeleton.*: true
+      MinecartMovement.spider.*: true
+      MinecartMovement.giant.*: true
+      MinecartMovement.zombie.*: true
+      MinecartMovement.slime.*: true
+      MinecartMovement.ghast.*: true
+      MinecartMovement.pig_zombie.*: true
+      MinecartMovement.enderman.*: true
+      MinecartMovement.cave_spider.*: true
+      MinecartMovement.silverfish.*: true
+      MinecartMovement.blaze.*: true
+      MinecartMovement.magma_cube.*: true
+      MinecartMovement.ender_dragon.*: true
+      MinecartMovement.wither.*: true
+      MinecartMovement.bat.*: true
+      MinecartMovement.witch.*: true
+      MinecartMovement.endermite.*: true
+      MinecartMovement.guardian.*: true
+      MinecartMovement.pig.*: true
+      MinecartMovement.sheep.*: true
+      MinecartMovement.cow.*: true
+      MinecartMovement.chicken.*: true
+      MinecartMovement.squid.*: true
+      MinecartMovement.wolf.*: true
+      MinecartMovement.mushroom_cow.*: true
+      MinecartMovement.snowman.*: true
+      MinecartMovement.ocelot.*: true
+      MinecartMovement.iron_golem.*: true
+      MinecartMovement.horse.*: true
+      MinecartMovement.rabbit.*: true
+      MinecartMovement.villager.*: true
+      MinecartMovement.ender_crystal.*: true
+      MinecartMovement.splash_potion.*: true
+      MinecartMovement.egg.*: true
+      MinecartMovement.fishing_hook.*: true
+      MinecartMovement.lightning.*: true
+      MinecartMovement.weather.*: true
+      MinecartMovement.player.*: true
+      MinecartMovement.complex_part.*: true
+      MinecartMovement.unknown.*: true
+  MinecartMovement.command.*:
+    description: Gives access to all commands in MinecartMovement
+    children:
+      MinecartMovement.command.reload: true
+  MinecartMovement.command.reload:
+    description: Gives access to the command MinecartMovement reload command
+    default: op
+  MinecartMovement.dropped_item.*:
+    description: Gives access to all abilities for a dropped_item.
+    children:
+      MinecartMovement.dropped_item.steer: true
+      MinecartMovement.dropped_item.jump: true
+      MinecartMovement.dropped_item.climb: true
+      MinecartMovement.dropped_item.fly: true
+      MinecartMovement.dropped_item.mount: true
+  MinecartMovement.dropped_item.steer:
+    description: Gives access to the ability steer for a dropped_item.
+    default: op
+  MinecartMovement.dropped_item.jump:
+    description: Gives access to the ability jump for a dropped_item.
+    default: op
+  MinecartMovement.dropped_item.climb:
+    description: Gives access to the ability climb for a dropped_item.
+    default: op
+  MinecartMovement.dropped_item.fly:
+    description: Gives access to the ability fly for a dropped_item.
+    default: op
+  MinecartMovement.dropped_item.mount:
+    description: Gives access to the ability mount for a dropped_item.
+    default: op
+  MinecartMovement.experience_orb.*:
+    description: Gives access to all abilities for a experience_orb.
+    children:
+      MinecartMovement.experience_orb.steer: true
+      MinecartMovement.experience_orb.jump: true
+      MinecartMovement.experience_orb.climb: true
+      MinecartMovement.experience_orb.fly: true
+      MinecartMovement.experience_orb.mount: true
+  MinecartMovement.experience_orb.steer:
+    description: Gives access to the ability steer for a experience_orb.
+    default: op
+  MinecartMovement.experience_orb.jump:
+    description: Gives access to the ability jump for a experience_orb.
+    default: op
+  MinecartMovement.experience_orb.climb:
+    description: Gives access to the ability climb for a experience_orb.
+    default: op
+  MinecartMovement.experience_orb.fly:
+    description: Gives access to the ability fly for a experience_orb.
+    default: op
+  MinecartMovement.experience_orb.mount:
+    description: Gives access to the ability mount for a experience_orb.
+    default: op
+  MinecartMovement.leash_hitch.*:
+    description: Gives access to all abilities for a leash_hitch.
+    children:
+      MinecartMovement.leash_hitch.steer: true
+      MinecartMovement.leash_hitch.jump: true
+      MinecartMovement.leash_hitch.climb: true
+      MinecartMovement.leash_hitch.fly: true
+      MinecartMovement.leash_hitch.mount: true
+  MinecartMovement.leash_hitch.steer:
+    description: Gives access to the ability steer for a leash_hitch.
+    default: op
+  MinecartMovement.leash_hitch.jump:
+    description: Gives access to the ability jump for a leash_hitch.
+    default: op
+  MinecartMovement.leash_hitch.climb:
+    description: Gives access to the ability climb for a leash_hitch.
+    default: op
+  MinecartMovement.leash_hitch.fly:
+    description: Gives access to the ability fly for a leash_hitch.
+    default: op
+  MinecartMovement.leash_hitch.mount:
+    description: Gives access to the ability mount for a leash_hitch.
+    default: op
+  MinecartMovement.painting.*:
+    description: Gives access to all abilities for a painting.
+    children:
+      MinecartMovement.painting.steer: true
+      MinecartMovement.painting.jump: true
+      MinecartMovement.painting.climb: true
+      MinecartMovement.painting.fly: true
+      MinecartMovement.painting.mount: true
+  MinecartMovement.painting.steer:
+    description: Gives access to the ability steer for a painting.
+    default: op
+  MinecartMovement.painting.jump:
+    description: Gives access to the ability jump for a painting.
+    default: op
+  MinecartMovement.painting.climb:
+    description: Gives access to the ability climb for a painting.
+    default: op
+  MinecartMovement.painting.fly:
+    description: Gives access to the ability fly for a painting.
+    default: op
+  MinecartMovement.painting.mount:
+    description: Gives access to the ability mount for a painting.
+    default: op
+  MinecartMovement.arrow.*:
+    description: Gives access to all abilities for a arrow.
+    children:
+      MinecartMovement.arrow.steer: true
+      MinecartMovement.arrow.jump: true
+      MinecartMovement.arrow.climb: true
+      MinecartMovement.arrow.fly: true
+      MinecartMovement.arrow.mount: true
+  MinecartMovement.arrow.steer:
+    description: Gives access to the ability steer for a arrow.
+    default: op
+  MinecartMovement.arrow.jump:
+    description: Gives access to the ability jump for a arrow.
+    default: op
+  MinecartMovement.arrow.climb:
+    description: Gives access to the ability climb for a arrow.
+    default: op
+  MinecartMovement.arrow.fly:
+    description: Gives access to the ability fly for a arrow.
+    default: op
+  MinecartMovement.arrow.mount:
+    description: Gives access to the ability mount for a arrow.
+    default: op
+  MinecartMovement.snowball.*:
+    description: Gives access to all abilities for a snowball.
+    children:
+      MinecartMovement.snowball.steer: true
+      MinecartMovement.snowball.jump: true
+      MinecartMovement.snowball.climb: true
+      MinecartMovement.snowball.fly: true
+      MinecartMovement.snowball.mount: true
+  MinecartMovement.snowball.steer:
+    description: Gives access to the ability steer for a snowball.
+    default: op
+  MinecartMovement.snowball.jump:
+    description: Gives access to the ability jump for a snowball.
+    default: op
+  MinecartMovement.snowball.climb:
+    description: Gives access to the ability climb for a snowball.
+    default: op
+  MinecartMovement.snowball.fly:
+    description: Gives access to the ability fly for a snowball.
+    default: op
+  MinecartMovement.snowball.mount:
+    description: Gives access to the ability mount for a snowball.
+    default: op
+  MinecartMovement.fireball.*:
+    description: Gives access to all abilities for a fireball.
+    children:
+      MinecartMovement.fireball.steer: true
+      MinecartMovement.fireball.jump: true
+      MinecartMovement.fireball.climb: true
+      MinecartMovement.fireball.fly: true
+      MinecartMovement.fireball.mount: true
+  MinecartMovement.fireball.steer:
+    description: Gives access to the ability steer for a fireball.
+    default: op
+  MinecartMovement.fireball.jump:
+    description: Gives access to the ability jump for a fireball.
+    default: op
+  MinecartMovement.fireball.climb:
+    description: Gives access to the ability climb for a fireball.
+    default: op
+  MinecartMovement.fireball.fly:
+    description: Gives access to the ability fly for a fireball.
+    default: op
+  MinecartMovement.fireball.mount:
+    description: Gives access to the ability mount for a fireball.
+    default: op
+  MinecartMovement.small_fireball.*:
+    description: Gives access to all abilities for a small_fireball.
+    children:
+      MinecartMovement.small_fireball.steer: true
+      MinecartMovement.small_fireball.jump: true
+      MinecartMovement.small_fireball.climb: true
+      MinecartMovement.small_fireball.fly: true
+      MinecartMovement.small_fireball.mount: true
+  MinecartMovement.small_fireball.steer:
+    description: Gives access to the ability steer for a small_fireball.
+    default: op
+  MinecartMovement.small_fireball.jump:
+    description: Gives access to the ability jump for a small_fireball.
+    default: op
+  MinecartMovement.small_fireball.climb:
+    description: Gives access to the ability climb for a small_fireball.
+    default: op
+  MinecartMovement.small_fireball.fly:
+    description: Gives access to the ability fly for a small_fireball.
+    default: op
+  MinecartMovement.small_fireball.mount:
+    description: Gives access to the ability mount for a small_fireball.
+    default: op
+  MinecartMovement.ender_pearl.*:
+    description: Gives access to all abilities for a ender_pearl.
+    children:
+      MinecartMovement.ender_pearl.steer: true
+      MinecartMovement.ender_pearl.jump: true
+      MinecartMovement.ender_pearl.climb: true
+      MinecartMovement.ender_pearl.fly: true
+      MinecartMovement.ender_pearl.mount: true
+  MinecartMovement.ender_pearl.steer:
+    description: Gives access to the ability steer for a ender_pearl.
+    default: op
+  MinecartMovement.ender_pearl.jump:
+    description: Gives access to the ability jump for a ender_pearl.
+    default: op
+  MinecartMovement.ender_pearl.climb:
+    description: Gives access to the ability climb for a ender_pearl.
+    default: op
+  MinecartMovement.ender_pearl.fly:
+    description: Gives access to the ability fly for a ender_pearl.
+    default: op
+  MinecartMovement.ender_pearl.mount:
+    description: Gives access to the ability mount for a ender_pearl.
+    default: op
+  MinecartMovement.ender_signal.*:
+    description: Gives access to all abilities for a ender_signal.
+    children:
+      MinecartMovement.ender_signal.steer: true
+      MinecartMovement.ender_signal.jump: true
+      MinecartMovement.ender_signal.climb: true
+      MinecartMovement.ender_signal.fly: true
+      MinecartMovement.ender_signal.mount: true
+  MinecartMovement.ender_signal.steer:
+    description: Gives access to the ability steer for a ender_signal.
+    default: op
+  MinecartMovement.ender_signal.jump:
+    description: Gives access to the ability jump for a ender_signal.
+    default: op
+  MinecartMovement.ender_signal.climb:
+    description: Gives access to the ability climb for a ender_signal.
+    default: op
+  MinecartMovement.ender_signal.fly:
+    description: Gives access to the ability fly for a ender_signal.
+    default: op
+  MinecartMovement.ender_signal.mount:
+    description: Gives access to the ability mount for a ender_signal.
+    default: op
+  MinecartMovement.thrown_exp_bottle.*:
+    description: Gives access to all abilities for a thrown_exp_bottle.
+    children:
+      MinecartMovement.thrown_exp_bottle.steer: true
+      MinecartMovement.thrown_exp_bottle.jump: true
+      MinecartMovement.thrown_exp_bottle.climb: true
+      MinecartMovement.thrown_exp_bottle.fly: true
+      MinecartMovement.thrown_exp_bottle.mount: true
+  MinecartMovement.thrown_exp_bottle.steer:
+    description: Gives access to the ability steer for a thrown_exp_bottle.
+    default: op
+  MinecartMovement.thrown_exp_bottle.jump:
+    description: Gives access to the ability jump for a thrown_exp_bottle.
+    default: op
+  MinecartMovement.thrown_exp_bottle.climb:
+    description: Gives access to the ability climb for a thrown_exp_bottle.
+    default: op
+  MinecartMovement.thrown_exp_bottle.fly:
+    description: Gives access to the ability fly for a thrown_exp_bottle.
+    default: op
+  MinecartMovement.thrown_exp_bottle.mount:
+    description: Gives access to the ability mount for a thrown_exp_bottle.
+    default: op
+  MinecartMovement.item_frame.*:
+    description: Gives access to all abilities for a item_frame.
+    children:
+      MinecartMovement.item_frame.steer: true
+      MinecartMovement.item_frame.jump: true
+      MinecartMovement.item_frame.climb: true
+      MinecartMovement.item_frame.fly: true
+      MinecartMovement.item_frame.mount: true
+  MinecartMovement.item_frame.steer:
+    description: Gives access to the ability steer for a item_frame.
+    default: op
+  MinecartMovement.item_frame.jump:
+    description: Gives access to the ability jump for a item_frame.
+    default: op
+  MinecartMovement.item_frame.climb:
+    description: Gives access to the ability climb for a item_frame.
+    default: op
+  MinecartMovement.item_frame.fly:
+    description: Gives access to the ability fly for a item_frame.
+    default: op
+  MinecartMovement.item_frame.mount:
+    description: Gives access to the ability mount for a item_frame.
+    default: op
+  MinecartMovement.wither_skull.*:
+    description: Gives access to all abilities for a wither_skull.
+    children:
+      MinecartMovement.wither_skull.steer: true
+      MinecartMovement.wither_skull.jump: true
+      MinecartMovement.wither_skull.climb: true
+      MinecartMovement.wither_skull.fly: true
+      MinecartMovement.wither_skull.mount: true
+  MinecartMovement.wither_skull.steer:
+    description: Gives access to the ability steer for a wither_skull.
+    default: op
+  MinecartMovement.wither_skull.jump:
+    description: Gives access to the ability jump for a wither_skull.
+    default: op
+  MinecartMovement.wither_skull.climb:
+    description: Gives access to the ability climb for a wither_skull.
+    default: op
+  MinecartMovement.wither_skull.fly:
+    description: Gives access to the ability fly for a wither_skull.
+    default: op
+  MinecartMovement.wither_skull.mount:
+    description: Gives access to the ability mount for a wither_skull.
+    default: op
+  MinecartMovement.primed_tnt.*:
+    description: Gives access to all abilities for a primed_tnt.
+    children:
+      MinecartMovement.primed_tnt.steer: true
+      MinecartMovement.primed_tnt.jump: true
+      MinecartMovement.primed_tnt.climb: true
+      MinecartMovement.primed_tnt.fly: true
+      MinecartMovement.primed_tnt.mount: true
+  MinecartMovement.primed_tnt.steer:
+    description: Gives access to the ability steer for a primed_tnt.
+    default: op
+  MinecartMovement.primed_tnt.jump:
+    description: Gives access to the ability jump for a primed_tnt.
+    default: op
+  MinecartMovement.primed_tnt.climb:
+    description: Gives access to the ability climb for a primed_tnt.
+    default: op
+  MinecartMovement.primed_tnt.fly:
+    description: Gives access to the ability fly for a primed_tnt.
+    default: op
+  MinecartMovement.primed_tnt.mount:
+    description: Gives access to the ability mount for a primed_tnt.
+    default: op
+  MinecartMovement.falling_block.*:
+    description: Gives access to all abilities for a falling_block.
+    children:
+      MinecartMovement.falling_block.steer: true
+      MinecartMovement.falling_block.jump: true
+      MinecartMovement.falling_block.climb: true
+      MinecartMovement.falling_block.fly: true
+      MinecartMovement.falling_block.mount: true
+  MinecartMovement.falling_block.steer:
+    description: Gives access to the ability steer for a falling_block.
+    default: op
+  MinecartMovement.falling_block.jump:
+    description: Gives access to the ability jump for a falling_block.
+    default: op
+  MinecartMovement.falling_block.climb:
+    description: Gives access to the ability climb for a falling_block.
+    default: op
+  MinecartMovement.falling_block.fly:
+    description: Gives access to the ability fly for a falling_block.
+    default: op
+  MinecartMovement.falling_block.mount:
+    description: Gives access to the ability mount for a falling_block.
+    default: op
+  MinecartMovement.firework.*:
+    description: Gives access to all abilities for a firework.
+    children:
+      MinecartMovement.firework.steer: true
+      MinecartMovement.firework.jump: true
+      MinecartMovement.firework.climb: true
+      MinecartMovement.firework.fly: true
+      MinecartMovement.firework.mount: true
+  MinecartMovement.firework.steer:
+    description: Gives access to the ability steer for a firework.
+    default: op
+  MinecartMovement.firework.jump:
+    description: Gives access to the ability jump for a firework.
+    default: op
+  MinecartMovement.firework.climb:
+    description: Gives access to the ability climb for a firework.
+    default: op
+  MinecartMovement.firework.fly:
+    description: Gives access to the ability fly for a firework.
+    default: op
+  MinecartMovement.firework.mount:
+    description: Gives access to the ability mount for a firework.
+    default: op
+  MinecartMovement.armor_stand.*:
+    description: Gives access to all abilities for a armor_stand.
+    children:
+      MinecartMovement.armor_stand.steer: true
+      MinecartMovement.armor_stand.jump: true
+      MinecartMovement.armor_stand.climb: true
+      MinecartMovement.armor_stand.fly: true
+      MinecartMovement.armor_stand.mount: true
+  MinecartMovement.armor_stand.steer:
+    description: Gives access to the ability steer for a armor_stand.
+    default: op
+  MinecartMovement.armor_stand.jump:
+    description: Gives access to the ability jump for a armor_stand.
+    default: op
+  MinecartMovement.armor_stand.climb:
+    description: Gives access to the ability climb for a armor_stand.
+    default: op
+  MinecartMovement.armor_stand.fly:
+    description: Gives access to the ability fly for a armor_stand.
+    default: op
+  MinecartMovement.armor_stand.mount:
+    description: Gives access to the ability mount for a armor_stand.
+    default: op
+  MinecartMovement.minecart_command.*:
+    description: Gives access to all abilities for a minecart_command.
+    children:
+      MinecartMovement.minecart_command.steer: true
+      MinecartMovement.minecart_command.jump: true
+      MinecartMovement.minecart_command.climb: true
+      MinecartMovement.minecart_command.fly: true
+      MinecartMovement.minecart_command.mount: true
+      MinecartMovement.minecart_command.groundPlace: true
+  MinecartMovement.minecart_command.steer:
+    description: Gives access to the ability steer for a minecart_command.
+    default: op
+  MinecartMovement.minecart_command.jump:
+    description: Gives access to the ability jump for a minecart_command.
+    default: op
+  MinecartMovement.minecart_command.climb:
+    description: Gives access to the ability climb for a minecart_command.
+    default: op
+  MinecartMovement.minecart_command.fly:
+    description: Gives access to the ability fly for a minecart_command.
+    default: op
+  MinecartMovement.minecart_command.mount:
+    description: Gives access to the ability mount for a minecart_command.
+    default: op
+  MinecartMovement.minecart_command.groundPlace:
+    description: Gives access to the ability to place a minecart_command on the ground.
+    default: op
+  MinecartMovement.boat.*:
+    description: Gives access to all abilities for a boat.
+    children:
+      MinecartMovement.boat.steer: true
+      MinecartMovement.boat.jump: true
+      MinecartMovement.boat.climb: true
+      MinecartMovement.boat.fly: true
+      MinecartMovement.boat.mount: true
+  MinecartMovement.boat.steer:
+    description: Gives access to the ability steer for a boat.
+    default: op
+  MinecartMovement.boat.jump:
+    description: Gives access to the ability jump for a boat.
+    default: op
+  MinecartMovement.boat.climb:
+    description: Gives access to the ability climb for a boat.
+    default: op
+  MinecartMovement.boat.fly:
+    description: Gives access to the ability fly for a boat.
+    default: op
+  MinecartMovement.boat.mount:
+    description: Gives access to the ability mount for a boat.
+    default: op
+  MinecartMovement.minecart.*:
+    description: Gives access to all abilities for a minecart.
+    children:
+      MinecartMovement.minecart.steer: true
+      MinecartMovement.minecart.jump: true
+      MinecartMovement.minecart.climb: true
+      MinecartMovement.minecart.fly: true
+      MinecartMovement.minecart.mount: true
+      MinecartMovement.minecart.groundPlace: true
+  MinecartMovement.minecart.steer:
+    description: Gives access to the ability steer for a minecart.
+    default: op
+  MinecartMovement.minecart.jump:
+    description: Gives access to the ability jump for a minecart.
+    default: op
+  MinecartMovement.minecart.climb:
+    description: Gives access to the ability climb for a minecart.
+    default: op
+  MinecartMovement.minecart.fly:
+    description: Gives access to the ability fly for a minecart.
+    default: op
+  MinecartMovement.minecart.mount:
+    description: Gives access to the ability mount for a minecart.
+    default: op
+  MinecartMovement.minecart.groundPlace:
+    description: Gives access to the ability to place a minecart on the ground.
+    default: op
+  MinecartMovement.minecart_chest.*:
+    description: Gives access to all abilities for a minecart_chest.
+    children:
+      MinecartMovement.minecart_chest.steer: true
+      MinecartMovement.minecart_chest.jump: true
+      MinecartMovement.minecart_chest.climb: true
+      MinecartMovement.minecart_chest.fly: true
+      MinecartMovement.minecart_chest.mount: true
+      MinecartMovement.minecart_chest.groundPlace: true
+  MinecartMovement.minecart_chest.steer:
+    description: Gives access to the ability steer for a minecart_chest.
+    default: op
+  MinecartMovement.minecart_chest.jump:
+    description: Gives access to the ability jump for a minecart_chest.
+    default: op
+  MinecartMovement.minecart_chest.climb:
+    description: Gives access to the ability climb for a minecart_chest.
+    default: op
+  MinecartMovement.minecart_chest.fly:
+    description: Gives access to the ability fly for a minecart_chest.
+    default: op
+  MinecartMovement.minecart_chest.mount:
+    description: Gives access to the ability mount for a minecart_chest.
+    default: op
+  MinecartMovement.minecart_chest.groundPlace:
+    description: Gives access to the ability to place a minecart_chest on the ground.
+    default: op
+  MinecartMovement.minecart_furnace.*:
+    description: Gives access to all abilities for a minecart_furnace.
+    children:
+      MinecartMovement.minecart_furnace.steer: true
+      MinecartMovement.minecart_furnace.jump: true
+      MinecartMovement.minecart_furnace.climb: true
+      MinecartMovement.minecart_furnace.fly: true
+      MinecartMovement.minecart_furnace.mount: true
+      MinecartMovement.minecart_furnace.groundPlace: true
+  MinecartMovement.minecart_furnace.steer:
+    description: Gives access to the ability steer for a minecart_furnace.
+    default: op
+  MinecartMovement.minecart_furnace.jump:
+    description: Gives access to the ability jump for a minecart_furnace.
+    default: op
+  MinecartMovement.minecart_furnace.climb:
+    description: Gives access to the ability climb for a minecart_furnace.
+    default: op
+  MinecartMovement.minecart_furnace.fly:
+    description: Gives access to the ability fly for a minecart_furnace.
+    default: op
+  MinecartMovement.minecart_furnace.mount:
+    description: Gives access to the ability mount for a minecart_furnace.
+    default: op
+  MinecartMovement.minecart_furnace.groundPlace:
+    description: Gives access to the ability to place a minecart_furnace on the ground.
+    default: op
+  MinecartMovement.minecart_tnt.*:
+    description: Gives access to all abilities for a minecart_tnt.
+    children:
+      MinecartMovement.minecart_tnt.steer: true
+      MinecartMovement.minecart_tnt.jump: true
+      MinecartMovement.minecart_tnt.climb: true
+      MinecartMovement.minecart_tnt.fly: true
+      MinecartMovement.minecart_tnt.mount: true
+      MinecartMovement.minecart_tnt.groundPlace: true
+  MinecartMovement.minecart_tnt.steer:
+    description: Gives access to the ability steer for a minecart_tnt.
+    default: op
+  MinecartMovement.minecart_tnt.jump:
+    description: Gives access to the ability jump for a minecart_tnt.
+    default: op
+  MinecartMovement.minecart_tnt.climb:
+    description: Gives access to the ability climb for a minecart_tnt.
+    default: op
+  MinecartMovement.minecart_tnt.fly:
+    description: Gives access to the ability fly for a minecart_tnt.
+    default: op
+  MinecartMovement.minecart_tnt.mount:
+    description: Gives access to the ability mount for a minecart_tnt.
+    default: op
+  MinecartMovement.minecart_tnt.groundPlace:
+    description: Gives access to the ability to place a minecart_tnt on the ground.
+    default: op
+  MinecartMovement.minecart_hopper.*:
+    description: Gives access to all abilities for a minecart_hopper.
+    children:
+      MinecartMovement.minecart_hopper.steer: true
+      MinecartMovement.minecart_hopper.jump: true
+      MinecartMovement.minecart_hopper.climb: true
+      MinecartMovement.minecart_hopper.fly: true
+      MinecartMovement.minecart_hopper.mount: true
+      MinecartMovement.minecart_hopper.groundPlace: true
+  MinecartMovement.minecart_hopper.steer:
+    description: Gives access to the ability steer for a minecart_hopper.
+    default: op
+  MinecartMovement.minecart_hopper.jump:
+    description: Gives access to the ability jump for a minecart_hopper.
+    default: op
+  MinecartMovement.minecart_hopper.climb:
+    description: Gives access to the ability climb for a minecart_hopper.
+    default: op
+  MinecartMovement.minecart_hopper.fly:
+    description: Gives access to the ability fly for a minecart_hopper.
+    default: op
+  MinecartMovement.minecart_hopper.mount:
+    description: Gives access to the ability mount for a minecart_hopper.
+    default: op
+  MinecartMovement.minecart_hopper.groundPlace:
+    description: Gives access to the ability to place a minecart_hopper on the ground.
+    default: op
+  MinecartMovement.minecart_mob_spawner.*:
+    description: Gives access to all abilities for a minecart_mob_spawner.
+    children:
+      MinecartMovement.minecart_mob_spawner.steer: true
+      MinecartMovement.minecart_mob_spawner.jump: true
+      MinecartMovement.minecart_mob_spawner.climb: true
+      MinecartMovement.minecart_mob_spawner.fly: true
+      MinecartMovement.minecart_mob_spawner.mount: true
+      MinecartMovement.minecart_mob_spawner.groundPlace: true
+  MinecartMovement.minecart_mob_spawner.steer:
+    description: Gives access to the ability steer for a minecart_mob_spawner.
+    default: op
+  MinecartMovement.minecart_mob_spawner.jump:
+    description: Gives access to the ability jump for a minecart_mob_spawner.
+    default: op
+  MinecartMovement.minecart_mob_spawner.climb:
+    description: Gives access to the ability climb for a minecart_mob_spawner.
+    default: op
+  MinecartMovement.minecart_mob_spawner.fly:
+    description: Gives access to the ability fly for a minecart_mob_spawner.
+    default: op
+  MinecartMovement.minecart_mob_spawner.mount:
+    description: Gives access to the ability mount for a minecart_mob_spawner.
+    default: op
+  MinecartMovement.minecart_mob_spawner.groundPlace:
+    description: Gives access to the ability to place a minecart_mob_spawner on the ground.
+    default: op
+  MinecartMovement.creeper.*:
+    description: Gives access to all abilities for a creeper.
+    children:
+      MinecartMovement.creeper.steer: true
+      MinecartMovement.creeper.jump: true
+      MinecartMovement.creeper.climb: true
+      MinecartMovement.creeper.fly: true
+      MinecartMovement.creeper.mount: true
+  MinecartMovement.creeper.steer:
+    description: Gives access to the ability steer for a creeper.
+    default: op
+  MinecartMovement.creeper.jump:
+    description: Gives access to the ability jump for a creeper.
+    default: op
+  MinecartMovement.creeper.climb:
+    description: Gives access to the ability climb for a creeper.
+    default: op
+  MinecartMovement.creeper.fly:
+    description: Gives access to the ability fly for a creeper.
+    default: op
+  MinecartMovement.creeper.mount:
+    description: Gives access to the ability mount for a creeper.
+    default: op
+  MinecartMovement.skeleton.*:
+    description: Gives access to all abilities for a skeleton.
+    children:
+      MinecartMovement.skeleton.steer: true
+      MinecartMovement.skeleton.jump: true
+      MinecartMovement.skeleton.climb: true
+      MinecartMovement.skeleton.fly: true
+      MinecartMovement.skeleton.mount: true
+  MinecartMovement.skeleton.steer:
+    description: Gives access to the ability steer for a skeleton.
+    default: op
+  MinecartMovement.skeleton.jump:
+    description: Gives access to the ability jump for a skeleton.
+    default: op
+  MinecartMovement.skeleton.climb:
+    description: Gives access to the ability climb for a skeleton.
+    default: op
+  MinecartMovement.skeleton.fly:
+    description: Gives access to the ability fly for a skeleton.
+    default: op
+  MinecartMovement.skeleton.mount:
+    description: Gives access to the ability mount for a skeleton.
+    default: op
+  MinecartMovement.spider.*:
+    description: Gives access to all abilities for a spider.
+    children:
+      MinecartMovement.spider.steer: true
+      MinecartMovement.spider.jump: true
+      MinecartMovement.spider.climb: true
+      MinecartMovement.spider.fly: true
+      MinecartMovement.spider.mount: true
+  MinecartMovement.spider.steer:
+    description: Gives access to the ability steer for a spider.
+    default: op
+  MinecartMovement.spider.jump:
+    description: Gives access to the ability jump for a spider.
+    default: op
+  MinecartMovement.spider.climb:
+    description: Gives access to the ability climb for a spider.
+    default: op
+  MinecartMovement.spider.fly:
+    description: Gives access to the ability fly for a spider.
+    default: op
+  MinecartMovement.spider.mount:
+    description: Gives access to the ability mount for a spider.
+    default: op
+  MinecartMovement.giant.*:
+    description: Gives access to all abilities for a giant.
+    children:
+      MinecartMovement.giant.steer: true
+      MinecartMovement.giant.jump: true
+      MinecartMovement.giant.climb: true
+      MinecartMovement.giant.fly: true
+      MinecartMovement.giant.mount: true
+  MinecartMovement.giant.steer:
+    description: Gives access to the ability steer for a giant.
+    default: op
+  MinecartMovement.giant.jump:
+    description: Gives access to the ability jump for a giant.
+    default: op
+  MinecartMovement.giant.climb:
+    description: Gives access to the ability climb for a giant.
+    default: op
+  MinecartMovement.giant.fly:
+    description: Gives access to the ability fly for a giant.
+    default: op
+  MinecartMovement.giant.mount:
+    description: Gives access to the ability mount for a giant.
+    default: op
+  MinecartMovement.zombie.*:
+    description: Gives access to all abilities for a zombie.
+    children:
+      MinecartMovement.zombie.steer: true
+      MinecartMovement.zombie.jump: true
+      MinecartMovement.zombie.climb: true
+      MinecartMovement.zombie.fly: true
+      MinecartMovement.zombie.mount: true
+  MinecartMovement.zombie.steer:
+    description: Gives access to the ability steer for a zombie.
+    default: op
+  MinecartMovement.zombie.jump:
+    description: Gives access to the ability jump for a zombie.
+    default: op
+  MinecartMovement.zombie.climb:
+    description: Gives access to the ability climb for a zombie.
+    default: op
+  MinecartMovement.zombie.fly:
+    description: Gives access to the ability fly for a zombie.
+    default: op
+  MinecartMovement.zombie.mount:
+    description: Gives access to the ability mount for a zombie.
+    default: op
+  MinecartMovement.slime.*:
+    description: Gives access to all abilities for a slime.
+    children:
+      MinecartMovement.slime.steer: true
+      MinecartMovement.slime.jump: true
+      MinecartMovement.slime.climb: true
+      MinecartMovement.slime.fly: true
+      MinecartMovement.slime.mount: true
+  MinecartMovement.slime.steer:
+    description: Gives access to the ability steer for a slime.
+    default: op
+  MinecartMovement.slime.jump:
+    description: Gives access to the ability jump for a slime.
+    default: op
+  MinecartMovement.slime.climb:
+    description: Gives access to the ability climb for a slime.
+    default: op
+  MinecartMovement.slime.fly:
+    description: Gives access to the ability fly for a slime.
+    default: op
+  MinecartMovement.slime.mount:
+    description: Gives access to the ability mount for a slime.
+    default: op
+  MinecartMovement.ghast.*:
+    description: Gives access to all abilities for a ghast.
+    children:
+      MinecartMovement.ghast.steer: true
+      MinecartMovement.ghast.jump: true
+      MinecartMovement.ghast.climb: true
+      MinecartMovement.ghast.fly: true
+      MinecartMovement.ghast.mount: true
+  MinecartMovement.ghast.steer:
+    description: Gives access to the ability steer for a ghast.
+    default: op
+  MinecartMovement.ghast.jump:
+    description: Gives access to the ability jump for a ghast.
+    default: op
+  MinecartMovement.ghast.climb:
+    description: Gives access to the ability climb for a ghast.
+    default: op
+  MinecartMovement.ghast.fly:
+    description: Gives access to the ability fly for a ghast.
+    default: op
+  MinecartMovement.ghast.mount:
+    description: Gives access to the ability mount for a ghast.
+    default: op
+  MinecartMovement.pig_zombie.*:
+    description: Gives access to all abilities for a pig_zombie.
+    children:
+      MinecartMovement.pig_zombie.steer: true
+      MinecartMovement.pig_zombie.jump: true
+      MinecartMovement.pig_zombie.climb: true
+      MinecartMovement.pig_zombie.fly: true
+      MinecartMovement.pig_zombie.mount: true
+  MinecartMovement.pig_zombie.steer:
+    description: Gives access to the ability steer for a pig_zombie.
+    default: op
+  MinecartMovement.pig_zombie.jump:
+    description: Gives access to the ability jump for a pig_zombie.
+    default: op
+  MinecartMovement.pig_zombie.climb:
+    description: Gives access to the ability climb for a pig_zombie.
+    default: op
+  MinecartMovement.pig_zombie.fly:
+    description: Gives access to the ability fly for a pig_zombie.
+    default: op
+  MinecartMovement.pig_zombie.mount:
+    description: Gives access to the ability mount for a pig_zombie.
+    default: op
+  MinecartMovement.enderman.*:
+    description: Gives access to all abilities for a enderman.
+    children:
+      MinecartMovement.enderman.steer: true
+      MinecartMovement.enderman.jump: true
+      MinecartMovement.enderman.climb: true
+      MinecartMovement.enderman.fly: true
+      MinecartMovement.enderman.mount: true
+  MinecartMovement.enderman.steer:
+    description: Gives access to the ability steer for a enderman.
+    default: op
+  MinecartMovement.enderman.jump:
+    description: Gives access to the ability jump for a enderman.
+    default: op
+  MinecartMovement.enderman.climb:
+    description: Gives access to the ability climb for a enderman.
+    default: op
+  MinecartMovement.enderman.fly:
+    description: Gives access to the ability fly for a enderman.
+    default: op
+  MinecartMovement.enderman.mount:
+    description: Gives access to the ability mount for a enderman.
+    default: op
+  MinecartMovement.cave_spider.*:
+    description: Gives access to all abilities for a cave_spider.
+    children:
+      MinecartMovement.cave_spider.steer: true
+      MinecartMovement.cave_spider.jump: true
+      MinecartMovement.cave_spider.climb: true
+      MinecartMovement.cave_spider.fly: true
+      MinecartMovement.cave_spider.mount: true
+  MinecartMovement.cave_spider.steer:
+    description: Gives access to the ability steer for a cave_spider.
+    default: op
+  MinecartMovement.cave_spider.jump:
+    description: Gives access to the ability jump for a cave_spider.
+    default: op
+  MinecartMovement.cave_spider.climb:
+    description: Gives access to the ability climb for a cave_spider.
+    default: op
+  MinecartMovement.cave_spider.fly:
+    description: Gives access to the ability fly for a cave_spider.
+    default: op
+  MinecartMovement.cave_spider.mount:
+    description: Gives access to the ability mount for a cave_spider.
+    default: op
+  MinecartMovement.silverfish.*:
+    description: Gives access to all abilities for a silverfish.
+    children:
+      MinecartMovement.silverfish.steer: true
+      MinecartMovement.silverfish.jump: true
+      MinecartMovement.silverfish.climb: true
+      MinecartMovement.silverfish.fly: true
+      MinecartMovement.silverfish.mount: true
+  MinecartMovement.silverfish.steer:
+    description: Gives access to the ability steer for a silverfish.
+    default: op
+  MinecartMovement.silverfish.jump:
+    description: Gives access to the ability jump for a silverfish.
+    default: op
+  MinecartMovement.silverfish.climb:
+    description: Gives access to the ability climb for a silverfish.
+    default: op
+  MinecartMovement.silverfish.fly:
+    description: Gives access to the ability fly for a silverfish.
+    default: op
+  MinecartMovement.silverfish.mount:
+    description: Gives access to the ability mount for a silverfish.
+    default: op
+  MinecartMovement.blaze.*:
+    description: Gives access to all abilities for a blaze.
+    children:
+      MinecartMovement.blaze.steer: true
+      MinecartMovement.blaze.jump: true
+      MinecartMovement.blaze.climb: true
+      MinecartMovement.blaze.fly: true
+      MinecartMovement.blaze.mount: true
+  MinecartMovement.blaze.steer:
+    description: Gives access to the ability steer for a blaze.
+    default: op
+  MinecartMovement.blaze.jump:
+    description: Gives access to the ability jump for a blaze.
+    default: op
+  MinecartMovement.blaze.climb:
+    description: Gives access to the ability climb for a blaze.
+    default: op
+  MinecartMovement.blaze.fly:
+    description: Gives access to the ability fly for a blaze.
+    default: op
+  MinecartMovement.blaze.mount:
+    description: Gives access to the ability mount for a blaze.
+    default: op
+  MinecartMovement.magma_cube.*:
+    description: Gives access to all abilities for a magma_cube.
+    children:
+      MinecartMovement.magma_cube.steer: true
+      MinecartMovement.magma_cube.jump: true
+      MinecartMovement.magma_cube.climb: true
+      MinecartMovement.magma_cube.fly: true
+      MinecartMovement.magma_cube.mount: true
+  MinecartMovement.magma_cube.steer:
+    description: Gives access to the ability steer for a magma_cube.
+    default: op
+  MinecartMovement.magma_cube.jump:
+    description: Gives access to the ability jump for a magma_cube.
+    default: op
+  MinecartMovement.magma_cube.climb:
+    description: Gives access to the ability climb for a magma_cube.
+    default: op
+  MinecartMovement.magma_cube.fly:
+    description: Gives access to the ability fly for a magma_cube.
+    default: op
+  MinecartMovement.magma_cube.mount:
+    description: Gives access to the ability mount for a magma_cube.
+    default: op
+  MinecartMovement.ender_dragon.*:
+    description: Gives access to all abilities for a ender_dragon.
+    children:
+      MinecartMovement.ender_dragon.steer: true
+      MinecartMovement.ender_dragon.jump: true
+      MinecartMovement.ender_dragon.climb: true
+      MinecartMovement.ender_dragon.fly: true
+      MinecartMovement.ender_dragon.mount: true
+  MinecartMovement.ender_dragon.steer:
+    description: Gives access to the ability steer for a ender_dragon.
+    default: op
+  MinecartMovement.ender_dragon.jump:
+    description: Gives access to the ability jump for a ender_dragon.
+    default: op
+  MinecartMovement.ender_dragon.climb:
+    description: Gives access to the ability climb for a ender_dragon.
+    default: op
+  MinecartMovement.ender_dragon.fly:
+    description: Gives access to the ability fly for a ender_dragon.
+    default: op
+  MinecartMovement.ender_dragon.mount:
+    description: Gives access to the ability mount for a ender_dragon.
+    default: op
+  MinecartMovement.wither.*:
+    description: Gives access to all abilities for a wither.
+    children:
+      MinecartMovement.wither.steer: true
+      MinecartMovement.wither.jump: true
+      MinecartMovement.wither.climb: true
+      MinecartMovement.wither.fly: true
+      MinecartMovement.wither.mount: true
+  MinecartMovement.wither.steer:
+    description: Gives access to the ability steer for a wither.
+    default: op
+  MinecartMovement.wither.jump:
+    description: Gives access to the ability jump for a wither.
+    default: op
+  MinecartMovement.wither.climb:
+    description: Gives access to the ability climb for a wither.
+    default: op
+  MinecartMovement.wither.fly:
+    description: Gives access to the ability fly for a wither.
+    default: op
+  MinecartMovement.wither.mount:
+    description: Gives access to the ability mount for a wither.
+    default: op
+  MinecartMovement.bat.*:
+    description: Gives access to all abilities for a bat.
+    children:
+      MinecartMovement.bat.steer: true
+      MinecartMovement.bat.jump: true
+      MinecartMovement.bat.climb: true
+      MinecartMovement.bat.fly: true
+      MinecartMovement.bat.mount: true
+  MinecartMovement.bat.steer:
+    description: Gives access to the ability steer for a bat.
+    default: op
+  MinecartMovement.bat.jump:
+    description: Gives access to the ability jump for a bat.
+    default: op
+  MinecartMovement.bat.climb:
+    description: Gives access to the ability climb for a bat.
+    default: op
+  MinecartMovement.bat.fly:
+    description: Gives access to the ability fly for a bat.
+    default: op
+  MinecartMovement.bat.mount:
+    description: Gives access to the ability mount for a bat.
+    default: op
+  MinecartMovement.witch.*:
+    description: Gives access to all abilities for a witch.
+    children:
+      MinecartMovement.witch.steer: true
+      MinecartMovement.witch.jump: true
+      MinecartMovement.witch.climb: true
+      MinecartMovement.witch.fly: true
+      MinecartMovement.witch.mount: true
+  MinecartMovement.witch.steer:
+    description: Gives access to the ability steer for a witch.
+    default: op
+  MinecartMovement.witch.jump:
+    description: Gives access to the ability jump for a witch.
+    default: op
+  MinecartMovement.witch.climb:
+    description: Gives access to the ability climb for a witch.
+    default: op
+  MinecartMovement.witch.fly:
+    description: Gives access to the ability fly for a witch.
+    default: op
+  MinecartMovement.witch.mount:
+    description: Gives access to the ability mount for a witch.
+    default: op
+  MinecartMovement.endermite.*:
+    description: Gives access to all abilities for a endermite.
+    children:
+      MinecartMovement.endermite.steer: true
+      MinecartMovement.endermite.jump: true
+      MinecartMovement.endermite.climb: true
+      MinecartMovement.endermite.fly: true
+      MinecartMovement.endermite.mount: true
+  MinecartMovement.endermite.steer:
+    description: Gives access to the ability steer for a endermite.
+    default: op
+  MinecartMovement.endermite.jump:
+    description: Gives access to the ability jump for a endermite.
+    default: op
+  MinecartMovement.endermite.climb:
+    description: Gives access to the ability climb for a endermite.
+    default: op
+  MinecartMovement.endermite.fly:
+    description: Gives access to the ability fly for a endermite.
+    default: op
+  MinecartMovement.endermite.mount:
+    description: Gives access to the ability mount for a endermite.
+    default: op
+  MinecartMovement.guardian.*:
+    description: Gives access to all abilities for a guardian.
+    children:
+      MinecartMovement.guardian.steer: true
+      MinecartMovement.guardian.jump: true
+      MinecartMovement.guardian.climb: true
+      MinecartMovement.guardian.fly: true
+      MinecartMovement.guardian.mount: true
+  MinecartMovement.guardian.steer:
+    description: Gives access to the ability steer for a guardian.
+    default: op
+  MinecartMovement.guardian.jump:
+    description: Gives access to the ability jump for a guardian.
+    default: op
+  MinecartMovement.guardian.climb:
+    description: Gives access to the ability climb for a guardian.
+    default: op
+  MinecartMovement.guardian.fly:
+    description: Gives access to the ability fly for a guardian.
+    default: op
+  MinecartMovement.guardian.mount:
+    description: Gives access to the ability mount for a guardian.
+    default: op
+  MinecartMovement.pig.*:
+    description: Gives access to all abilities for a pig.
+    children:
+      MinecartMovement.pig.steer: true
+      MinecartMovement.pig.jump: true
+      MinecartMovement.pig.climb: true
+      MinecartMovement.pig.fly: true
+      MinecartMovement.pig.mount: true
+  MinecartMovement.pig.steer:
+    description: Gives access to the ability steer for a pig.
+    default: op
+  MinecartMovement.pig.jump:
+    description: Gives access to the ability jump for a pig.
+    default: op
+  MinecartMovement.pig.climb:
+    description: Gives access to the ability climb for a pig.
+    default: op
+  MinecartMovement.pig.fly:
+    description: Gives access to the ability fly for a pig.
+    default: op
+  MinecartMovement.pig.mount:
+    description: Gives access to the ability mount for a pig.
+    default: op
+  MinecartMovement.sheep.*:
+    description: Gives access to all abilities for a sheep.
+    children:
+      MinecartMovement.sheep.steer: true
+      MinecartMovement.sheep.jump: true
+      MinecartMovement.sheep.climb: true
+      MinecartMovement.sheep.fly: true
+      MinecartMovement.sheep.mount: true
+  MinecartMovement.sheep.steer:
+    description: Gives access to the ability steer for a sheep.
+    default: op
+  MinecartMovement.sheep.jump:
+    description: Gives access to the ability jump for a sheep.
+    default: op
+  MinecartMovement.sheep.climb:
+    description: Gives access to the ability climb for a sheep.
+    default: op
+  MinecartMovement.sheep.fly:
+    description: Gives access to the ability fly for a sheep.
+    default: op
+  MinecartMovement.sheep.mount:
+    description: Gives access to the ability mount for a sheep.
+    default: op
+  MinecartMovement.cow.*:
+    description: Gives access to all abilities for a cow.
+    children:
+      MinecartMovement.cow.steer: true
+      MinecartMovement.cow.jump: true
+      MinecartMovement.cow.climb: true
+      MinecartMovement.cow.fly: true
+      MinecartMovement.cow.mount: true
+  MinecartMovement.cow.steer:
+    description: Gives access to the ability steer for a cow.
+    default: op
+  MinecartMovement.cow.jump:
+    description: Gives access to the ability jump for a cow.
+    default: op
+  MinecartMovement.cow.climb:
+    description: Gives access to the ability climb for a cow.
+    default: op
+  MinecartMovement.cow.fly:
+    description: Gives access to the ability fly for a cow.
+    default: op
+  MinecartMovement.cow.mount:
+    description: Gives access to the ability mount for a cow.
+    default: op
+  MinecartMovement.chicken.*:
+    description: Gives access to all abilities for a chicken.
+    children:
+      MinecartMovement.chicken.steer: true
+      MinecartMovement.chicken.jump: true
+      MinecartMovement.chicken.climb: true
+      MinecartMovement.chicken.fly: true
+      MinecartMovement.chicken.mount: true
+  MinecartMovement.chicken.steer:
+    description: Gives access to the ability steer for a chicken.
+    default: op
+  MinecartMovement.chicken.jump:
+    description: Gives access to the ability jump for a chicken.
+    default: op
+  MinecartMovement.chicken.climb:
+    description: Gives access to the ability climb for a chicken.
+    default: op
+  MinecartMovement.chicken.fly:
+    description: Gives access to the ability fly for a chicken.
+    default: op
+  MinecartMovement.chicken.mount:
+    description: Gives access to the ability mount for a chicken.
+    default: op
+  MinecartMovement.squid.*:
+    description: Gives access to all abilities for a squid.
+    children:
+      MinecartMovement.squid.steer: true
+      MinecartMovement.squid.jump: true
+      MinecartMovement.squid.climb: true
+      MinecartMovement.squid.fly: true
+      MinecartMovement.squid.mount: true
+  MinecartMovement.squid.steer:
+    description: Gives access to the ability steer for a squid.
+    default: op
+  MinecartMovement.squid.jump:
+    description: Gives access to the ability jump for a squid.
+    default: op
+  MinecartMovement.squid.climb:
+    description: Gives access to the ability climb for a squid.
+    default: op
+  MinecartMovement.squid.fly:
+    description: Gives access to the ability fly for a squid.
+    default: op
+  MinecartMovement.squid.mount:
+    description: Gives access to the ability mount for a squid.
+    default: op
+  MinecartMovement.wolf.*:
+    description: Gives access to all abilities for a wolf.
+    children:
+      MinecartMovement.wolf.steer: true
+      MinecartMovement.wolf.jump: true
+      MinecartMovement.wolf.climb: true
+      MinecartMovement.wolf.fly: true
+      MinecartMovement.wolf.mount: true
+  MinecartMovement.wolf.steer:
+    description: Gives access to the ability steer for a wolf.
+    default: op
+  MinecartMovement.wolf.jump:
+    description: Gives access to the ability jump for a wolf.
+    default: op
+  MinecartMovement.wolf.climb:
+    description: Gives access to the ability climb for a wolf.
+    default: op
+  MinecartMovement.wolf.fly:
+    description: Gives access to the ability fly for a wolf.
+    default: op
+  MinecartMovement.wolf.mount:
+    description: Gives access to the ability mount for a wolf.
+    default: op
+  MinecartMovement.mushroom_cow.*:
+    description: Gives access to all abilities for a mushroom_cow.
+    children:
+      MinecartMovement.mushroom_cow.steer: true
+      MinecartMovement.mushroom_cow.jump: true
+      MinecartMovement.mushroom_cow.climb: true
+      MinecartMovement.mushroom_cow.fly: true
+      MinecartMovement.mushroom_cow.mount: true
+  MinecartMovement.mushroom_cow.steer:
+    description: Gives access to the ability steer for a mushroom_cow.
+    default: op
+  MinecartMovement.mushroom_cow.jump:
+    description: Gives access to the ability jump for a mushroom_cow.
+    default: op
+  MinecartMovement.mushroom_cow.climb:
+    description: Gives access to the ability climb for a mushroom_cow.
+    default: op
+  MinecartMovement.mushroom_cow.fly:
+    description: Gives access to the ability fly for a mushroom_cow.
+    default: op
+  MinecartMovement.mushroom_cow.mount:
+    description: Gives access to the ability mount for a mushroom_cow.
+    default: op
+  MinecartMovement.snowman.*:
+    description: Gives access to all abilities for a snowman.
+    children:
+      MinecartMovement.snowman.steer: true
+      MinecartMovement.snowman.jump: true
+      MinecartMovement.snowman.climb: true
+      MinecartMovement.snowman.fly: true
+      MinecartMovement.snowman.mount: true
+  MinecartMovement.snowman.steer:
+    description: Gives access to the ability steer for a snowman.
+    default: op
+  MinecartMovement.snowman.jump:
+    description: Gives access to the ability jump for a snowman.
+    default: op
+  MinecartMovement.snowman.climb:
+    description: Gives access to the ability climb for a snowman.
+    default: op
+  MinecartMovement.snowman.fly:
+    description: Gives access to the ability fly for a snowman.
+    default: op
+  MinecartMovement.snowman.mount:
+    description: Gives access to the ability mount for a snowman.
+    default: op
+  MinecartMovement.ocelot.*:
+    description: Gives access to all abilities for a ocelot.
+    children:
+      MinecartMovement.ocelot.steer: true
+      MinecartMovement.ocelot.jump: true
+      MinecartMovement.ocelot.climb: true
+      MinecartMovement.ocelot.fly: true
+      MinecartMovement.ocelot.mount: true
+  MinecartMovement.ocelot.steer:
+    description: Gives access to the ability steer for a ocelot.
+    default: op
+  MinecartMovement.ocelot.jump:
+    description: Gives access to the ability jump for a ocelot.
+    default: op
+  MinecartMovement.ocelot.climb:
+    description: Gives access to the ability climb for a ocelot.
+    default: op
+  MinecartMovement.ocelot.fly:
+    description: Gives access to the ability fly for a ocelot.
+    default: op
+  MinecartMovement.ocelot.mount:
+    description: Gives access to the ability mount for a ocelot.
+    default: op
+  MinecartMovement.iron_golem.*:
+    description: Gives access to all abilities for a iron_golem.
+    children:
+      MinecartMovement.iron_golem.steer: true
+      MinecartMovement.iron_golem.jump: true
+      MinecartMovement.iron_golem.climb: true
+      MinecartMovement.iron_golem.fly: true
+      MinecartMovement.iron_golem.mount: true
+  MinecartMovement.iron_golem.steer:
+    description: Gives access to the ability steer for a iron_golem.
+    default: op
+  MinecartMovement.iron_golem.jump:
+    description: Gives access to the ability jump for a iron_golem.
+    default: op
+  MinecartMovement.iron_golem.climb:
+    description: Gives access to the ability climb for a iron_golem.
+    default: op
+  MinecartMovement.iron_golem.fly:
+    description: Gives access to the ability fly for a iron_golem.
+    default: op
+  MinecartMovement.iron_golem.mount:
+    description: Gives access to the ability mount for a iron_golem.
+    default: op
+  MinecartMovement.horse.*:
+    description: Gives access to all abilities for a horse.
+    children:
+      MinecartMovement.horse.steer: true
+      MinecartMovement.horse.jump: true
+      MinecartMovement.horse.climb: true
+      MinecartMovement.horse.fly: true
+      MinecartMovement.horse.mount: true
+  MinecartMovement.horse.steer:
+    description: Gives access to the ability steer for a horse.
+    default: op
+  MinecartMovement.horse.jump:
+    description: Gives access to the ability jump for a horse.
+    default: op
+  MinecartMovement.horse.climb:
+    description: Gives access to the ability climb for a horse.
+    default: op
+  MinecartMovement.horse.fly:
+    description: Gives access to the ability fly for a horse.
+    default: op
+  MinecartMovement.horse.mount:
+    description: Gives access to the ability mount for a horse.
+    default: op
+  MinecartMovement.rabbit.*:
+    description: Gives access to all abilities for a rabbit.
+    children:
+      MinecartMovement.rabbit.steer: true
+      MinecartMovement.rabbit.jump: true
+      MinecartMovement.rabbit.climb: true
+      MinecartMovement.rabbit.fly: true
+      MinecartMovement.rabbit.mount: true
+  MinecartMovement.rabbit.steer:
+    description: Gives access to the ability steer for a rabbit.
+    default: op
+  MinecartMovement.rabbit.jump:
+    description: Gives access to the ability jump for a rabbit.
+    default: op
+  MinecartMovement.rabbit.climb:
+    description: Gives access to the ability climb for a rabbit.
+    default: op
+  MinecartMovement.rabbit.fly:
+    description: Gives access to the ability fly for a rabbit.
+    default: op
+  MinecartMovement.rabbit.mount:
+    description: Gives access to the ability mount for a rabbit.
+    default: op
+  MinecartMovement.villager.*:
+    description: Gives access to all abilities for a villager.
+    children:
+      MinecartMovement.villager.steer: true
+      MinecartMovement.villager.jump: true
+      MinecartMovement.villager.climb: true
+      MinecartMovement.villager.fly: true
+      MinecartMovement.villager.mount: true
+  MinecartMovement.villager.steer:
+    description: Gives access to the ability steer for a villager.
+    default: op
+  MinecartMovement.villager.jump:
+    description: Gives access to the ability jump for a villager.
+    default: op
+  MinecartMovement.villager.climb:
+    description: Gives access to the ability climb for a villager.
+    default: op
+  MinecartMovement.villager.fly:
+    description: Gives access to the ability fly for a villager.
+    default: op
+  MinecartMovement.villager.mount:
+    description: Gives access to the ability mount for a villager.
+    default: op
+  MinecartMovement.ender_crystal.*:
+    description: Gives access to all abilities for a ender_crystal.
+    children:
+      MinecartMovement.ender_crystal.steer: true
+      MinecartMovement.ender_crystal.jump: true
+      MinecartMovement.ender_crystal.climb: true
+      MinecartMovement.ender_crystal.fly: true
+      MinecartMovement.ender_crystal.mount: true
+  MinecartMovement.ender_crystal.steer:
+    description: Gives access to the ability steer for a ender_crystal.
+    default: op
+  MinecartMovement.ender_crystal.jump:
+    description: Gives access to the ability jump for a ender_crystal.
+    default: op
+  MinecartMovement.ender_crystal.climb:
+    description: Gives access to the ability climb for a ender_crystal.
+    default: op
+  MinecartMovement.ender_crystal.fly:
+    description: Gives access to the ability fly for a ender_crystal.
+    default: op
+  MinecartMovement.ender_crystal.mount:
+    description: Gives access to the ability mount for a ender_crystal.
+    default: op
+  MinecartMovement.splash_potion.*:
+    description: Gives access to all abilities for a splash_potion.
+    children:
+      MinecartMovement.splash_potion.steer: true
+      MinecartMovement.splash_potion.jump: true
+      MinecartMovement.splash_potion.climb: true
+      MinecartMovement.splash_potion.fly: true
+      MinecartMovement.splash_potion.mount: true
+  MinecartMovement.splash_potion.steer:
+    description: Gives access to the ability steer for a splash_potion.
+    default: op
+  MinecartMovement.splash_potion.jump:
+    description: Gives access to the ability jump for a splash_potion.
+    default: op
+  MinecartMovement.splash_potion.climb:
+    description: Gives access to the ability climb for a splash_potion.
+    default: op
+  MinecartMovement.splash_potion.fly:
+    description: Gives access to the ability fly for a splash_potion.
+    default: op
+  MinecartMovement.splash_potion.mount:
+    description: Gives access to the ability mount for a splash_potion.
+    default: op
+  MinecartMovement.egg.*:
+    description: Gives access to all abilities for a egg.
+    children:
+      MinecartMovement.egg.steer: true
+      MinecartMovement.egg.jump: true
+      MinecartMovement.egg.climb: true
+      MinecartMovement.egg.fly: true
+      MinecartMovement.egg.mount: true
+  MinecartMovement.egg.steer:
+    description: Gives access to the ability steer for a egg.
+    default: op
+  MinecartMovement.egg.jump:
+    description: Gives access to the ability jump for a egg.
+    default: op
+  MinecartMovement.egg.climb:
+    description: Gives access to the ability climb for a egg.
+    default: op
+  MinecartMovement.egg.fly:
+    description: Gives access to the ability fly for a egg.
+    default: op
+  MinecartMovement.egg.mount:
+    description: Gives access to the ability mount for a egg.
+    default: op
+  MinecartMovement.fishing_hook.*:
+    description: Gives access to all abilities for a fishing_hook.
+    children:
+      MinecartMovement.fishing_hook.steer: true
+      MinecartMovement.fishing_hook.jump: true
+      MinecartMovement.fishing_hook.climb: true
+      MinecartMovement.fishing_hook.fly: true
+      MinecartMovement.fishing_hook.mount: true
+  MinecartMovement.fishing_hook.steer:
+    description: Gives access to the ability steer for a fishing_hook.
+    default: op
+  MinecartMovement.fishing_hook.jump:
+    description: Gives access to the ability jump for a fishing_hook.
+    default: op
+  MinecartMovement.fishing_hook.climb:
+    description: Gives access to the ability climb for a fishing_hook.
+    default: op
+  MinecartMovement.fishing_hook.fly:
+    description: Gives access to the ability fly for a fishing_hook.
+    default: op
+  MinecartMovement.fishing_hook.mount:
+    description: Gives access to the ability mount for a fishing_hook.
+    default: op
+  MinecartMovement.lightning.*:
+    description: Gives access to all abilities for a lightning.
+    children:
+      MinecartMovement.lightning.steer: true
+      MinecartMovement.lightning.jump: true
+      MinecartMovement.lightning.climb: true
+      MinecartMovement.lightning.fly: true
+      MinecartMovement.lightning.mount: true
+  MinecartMovement.lightning.steer:
+    description: Gives access to the ability steer for a lightning.
+    default: op
+  MinecartMovement.lightning.jump:
+    description: Gives access to the ability jump for a lightning.
+    default: op
+  MinecartMovement.lightning.climb:
+    description: Gives access to the ability climb for a lightning.
+    default: op
+  MinecartMovement.lightning.fly:
+    description: Gives access to the ability fly for a lightning.
+    default: op
+  MinecartMovement.lightning.mount:
+    description: Gives access to the ability mount for a lightning.
+    default: op
+  MinecartMovement.weather.*:
+    description: Gives access to all abilities for a weather.
+    children:
+      MinecartMovement.weather.steer: true
+      MinecartMovement.weather.jump: true
+      MinecartMovement.weather.climb: true
+      MinecartMovement.weather.fly: true
+      MinecartMovement.weather.mount: true
+  MinecartMovement.weather.steer:
+    description: Gives access to the ability steer for a weather.
+    default: op
+  MinecartMovement.weather.jump:
+    description: Gives access to the ability jump for a weather.
+    default: op
+  MinecartMovement.weather.climb:
+    description: Gives access to the ability climb for a weather.
+    default: op
+  MinecartMovement.weather.fly:
+    description: Gives access to the ability fly for a weather.
+    default: op
+  MinecartMovement.weather.mount:
+    description: Gives access to the ability mount for a weather.
+    default: op
+  MinecartMovement.player.*:
+    description: Gives access to all abilities for a player.
+    children:
+      MinecartMovement.player.steer: true
+      MinecartMovement.player.jump: true
+      MinecartMovement.player.climb: true
+      MinecartMovement.player.fly: true
+      MinecartMovement.player.mount: true
+  MinecartMovement.player.steer:
+    description: Gives access to the ability steer for a player.
+    default: op
+  MinecartMovement.player.jump:
+    description: Gives access to the ability jump for a player.
+    default: op
+  MinecartMovement.player.climb:
+    description: Gives access to the ability climb for a player.
+    default: op
+  MinecartMovement.player.fly:
+    description: Gives access to the ability fly for a player.
+    default: op
+  MinecartMovement.player.mount:
+    description: Gives access to the ability mount for a player.
+    default: op
+  MinecartMovement.complex_part.*:
+    description: Gives access to all abilities for a complex_part.
+    children:
+      MinecartMovement.complex_part.steer: true
+      MinecartMovement.complex_part.jump: true
+      MinecartMovement.complex_part.climb: true
+      MinecartMovement.complex_part.fly: true
+      MinecartMovement.complex_part.mount: true
+  MinecartMovement.complex_part.steer:
+    description: Gives access to the ability steer for a complex_part.
+    default: op
+  MinecartMovement.complex_part.jump:
+    description: Gives access to the ability jump for a complex_part.
+    default: op
+  MinecartMovement.complex_part.climb:
+    description: Gives access to the ability climb for a complex_part.
+    default: op
+  MinecartMovement.complex_part.fly:
+    description: Gives access to the ability fly for a complex_part.
+    default: op
+  MinecartMovement.complex_part.mount:
+    description: Gives access to the ability mount for a complex_part.
+    default: op
+  MinecartMovement.unknown.*:
+    description: Gives access to all abilities for a unknown.
+    children:
+      MinecartMovement.unknown.steer: true
+      MinecartMovement.unknown.jump: true
+      MinecartMovement.unknown.climb: true
+      MinecartMovement.unknown.fly: true
+      MinecartMovement.unknown.mount: true
+  MinecartMovement.unknown.steer:
+    description: Gives access to the ability steer for a unknown.
+    default: op
+  MinecartMovement.unknown.jump:
+    description: Gives access to the ability jump for a unknown.
+    default: op
+  MinecartMovement.unknown.climb:
+    description: Gives access to the ability climb for a unknown.
+    default: op
+  MinecartMovement.unknown.fly:
+    description: Gives access to the ability fly for a unknown.
+    default: op
+  MinecartMovement.unknown.mount:
+    description: Gives access to the ability mount for a unknown.
+    default: op
