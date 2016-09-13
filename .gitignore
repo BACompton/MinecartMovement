@@ -1,0 +1,10 @@
+# Eclipse Stuff #
+#################
+.classpath
+.project
+.settings
+bin
+
+# Compiled Source #
+###################
+*.class
